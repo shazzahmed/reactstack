@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import PageContainer from './components/PageContainer/PageContainer.component';
+import HomePage from './pages/HomePage/HomePage.component';
+import withPageTitle from './services/withPageTitle';
 
+const HomePageComponent = withPageTitle({
+  component: PageContainer({ component: HomePage }),
+  title: 'CLONE Stack Overflow - Where Developers Learn, Share, & Build Careers'
+});
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App' >
+      <HomePageComponent />
+      {/* <PageContainer component = {HomePage} /> */}
+      {/* <Header/>
+      <Alert/>
+      <Routes /> */}
+    </div >
   );
 }
 
